@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
-import 'screens/splash_screen.dart';
+import 'screens/home_screen.dart';
+import 'screens/login_screen.dart'; // Make sure you have this
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Hotel Booking',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.orange),
-      home: SplashScreen(),
+      theme: ThemeData(
+        primarySwatch: Colors.teal,
+        fontFamily: 'OpenSans',
+      ),
+      home: const HomeScreen(), // Start with HomeScreen
     );
   }
 }
