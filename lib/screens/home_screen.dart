@@ -129,30 +129,20 @@ class HomeScreen extends StatelessWidget {
           BoxShadow(
             color: Colors.black26,
             blurRadius: 8,
-            offset: Offset(0, 4),
+            offset: Offset
+              (0, 4),
           ),
         ],
         image: DecorationImage(
           image: AssetImage(imagePath),
           fit: BoxFit.cover,
           colorFilter: ColorFilter.mode(
-            Colors.black.withOpacity(0.45),
+            Colors.black.withAlpha((0.45 * 255).toInt()),
             BlendMode.darken,
           ),
         ),
       ),
-      child: Center(
-        child: Text(
-          title,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 1,
-            fontFamily: 'OpenSans',
-          ),
-        ),
-      ),
     );
+
   }
 }

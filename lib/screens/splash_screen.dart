@@ -3,6 +3,7 @@ import 'package:hotel_booking/screens/onboardingscreen1.dart';
 import 'onboardingscreen1.dart'; // Import Onboarding 1
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
