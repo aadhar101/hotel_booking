@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_booking/screens/onboardingscreen1.dart';
-import 'onboardingscreen1.dart'; // Import Onboarding 1
+import '../features/auth/presentation/pages/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => OnboardingScreen1()),
+        MaterialPageRoute(builder: (_) => const LoginScreen()),
       );
     });
   }
@@ -23,27 +23,31 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              'assets/logo.png',
-              width: 150,
-              height: 150,
-            ),
-            SizedBox(height: 20),
-            Text(
-              "Hotel Booking",
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-                color: Colors.orange[800],
+      body: Stack(
+        children: [
+          // Background Image
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/image 1.png'),
+                fit: BoxFit.cover,
               ),
             ),
-          ],
-        ),
+          ),
+
+          // Optional dark overlay
+          Container(
+            color: Colors.black.withOpacity(0.3),
+          ),
+
+          // Logo
+          Center(
+            child: Image.asset(
+              'assets/images/logo.png',
+              width: 150,
+            ),
+          ),
+        ],
       ),
     );
   }

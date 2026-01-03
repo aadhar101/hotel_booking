@@ -8,6 +8,7 @@ class RegisterScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Register'),
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -49,9 +50,13 @@ class RegisterScreen extends StatelessWidget {
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pop(context); // back to login
+                  // ✅ GO TO DASHBOARD / HOME
+                  Navigator.pushReplacementNamed(context, '/home');
                 },
-                child: const Text('Register'),
+                child: const Text(
+                  'Register',
+                  style: TextStyle(fontSize: 18),
+                ),
               ),
             ),
           ],
