@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/splash_screen.dart';
+import 'package:hotel_booking/features/splash/presentation/pages/splash_page.dart';
 
 void main() {
   runApp(MyApp());
