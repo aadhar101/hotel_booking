@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_booking/app/theme/app_theme.dart';
-import 'package:hotel_booking/features/splash/presentation/pages/splash_page.dart';
+import './../features/auth/presentation/pages/login_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -8,12 +7,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'hotel_booking',
+      title: 'Hotel Booking',
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.system,
-      home: SplashScreen(),
+      theme: ThemeData(
+        primarySwatch: Colors.orange,
+        scaffoldBackgroundColor: Colors.white,
+        inputDecorationTheme: InputDecorationTheme(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+      ),
+      home: LoginScreen(),
     );
   }
 }

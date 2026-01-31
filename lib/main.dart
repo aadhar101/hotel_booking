@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_booking/features/splash/presentation/pages/splash_page.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import '/app/app.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Hotel Booking',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.orange),
-      home: SplashScreen(),
-    );
-  }
+  await Hive.initFlutter();
+  await Hive.openBox('authBox');
+
+  runApp(const MyApp());
 }
